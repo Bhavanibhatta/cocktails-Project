@@ -1,5 +1,4 @@
 import React from "react";
-//useParams is the Hook to get url parameters
 import { useParams, Link } from "react-router-dom";
 
 export default function SingleCocktail() {
@@ -62,7 +61,7 @@ export default function SingleCocktail() {
     return <h2 className="section-title">Loading...</h2>;
   }
   if (!cocktail) {
-    return <h2 className="section-title">no cocktail to display</h2>;
+    return <h2 className="section-title">No cocktail to display</h2>;
   } else {
     const {
       name,
@@ -76,23 +75,23 @@ export default function SingleCocktail() {
     return (
       <section className="section cocktail-section">
         <Link to="/" className="btn btn-primary">
-          back home
+          Back home
         </Link>
-        <h2 className="section-title">{name}</h2>
+        <h2 className="section-title">Drink Name : {name}</h2>
         <div className="drink">
           <img src={image} alt={name} />
           <div className="drink-info">
-            <p>name : {name}</p>
-            <p>category : {category}</p>
-            <p>info : {info}</p>
-            <p>glass : {glass}</p>
-            <p>instructions: {instructions}</p>
+            <p>Category : {category}</p>
+            <p>Type : {info}</p>
+            <p>Glass : {glass}</p>
             <p>
-              ingredients :{" "}
+              Ingredients :{" "}
               {ingredients.map((item, index) => {
                 return item ? <span key={index}>{item}</span> : null;
               })}
             </p>
+            <p>Instructions: {instructions}</p>
+           
           </div>
         </div>
       </section>

@@ -3,18 +3,11 @@ import CocktailsList from "../components/CocktailList";
 import SearchForm from "../components/SearchForm";
 
 export default function Home() {
-  //Setting states in functional components
-
-  //Loading state
   const [loading, setLoading] = React.useState(false);
-
-  //Search state
   const [searchTerm, setSearchTerm] = React.useState("a");
 
-  //Cocktails state
   const [cocktails, setCocktails] = React.useState([]);
 
-  //Using empty array[] as second array make to run useEffect ony ones when component mounts
   React.useEffect(() => {
     setLoading(true);
     async function getDrinks() {
